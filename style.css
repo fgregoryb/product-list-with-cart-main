@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(237, 232, 226);
+  padding: 70px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#pai {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.container h1 {
+  text-align: left;
+  margin-top: 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 70%;
+  min-width: 300px;
+  justify-content: center;
+}
+
+.product {
+  position: relative;
+  margin: 6px;
+  flex: 0 0 calc(33.333% - 24px);
+  text-align: center;
+}
+
+.img_cards {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.addToCard {
+  width: 150px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 17px;
+  font-size: 11px;
+  border: 1px solid rgb(135, 83, 77);
+  margin: 0 auto 0 auto;
+  /* Centraliza o botão horizontalmente */
+}
+
+.addToCard:hover {
+  cursor: pointer;
+}
+
+.description {
+  text-align: left;
+  margin-left: 15%;
+  margin-top: 7px;
+}
+
+.quantity-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  height: 35px;
+  background-color: #d94a30;
+  /* Cor de fundo laranja */
+  border-radius: 20px;
+  /* Borda arredondada para parecer uma pílula */
+  padding: 5px;
+  margin: 0 auto;
+  /* Centraliza o botão horizontalmente */
+}
+
+.quantity-area button {
+  background-color: #d94a30;
+  /* Cor de fundo dos botões igual ao contêiner */
+  border: none;
+  font-size: 18px;
+  /* Tamanho da fonte do texto nos botões */
+  color: white;
+  /* Cor do texto dos botões */
+  cursor: pointer;
+  border-radius: 50%;
+  /* Borda redonda para os botões */
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-area button:hover {
+  background-color: #b83e29;
+  /* Cor mais escura ao passar o mouse */
+}
+
+.quantity-area span {
+  color: white;
+  font-size: 16px;
+  /* Tamanho da fonte do número */
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+.tittle_1 {
+  font-size: 12px;
+  color: rgb(121, 121, 111);
+}
+
+.tittle_2 {
+  font-size: 13px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.price,
+.qtd {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(185, 94, 94);
+}
+
+#cart-box {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background-color: #f9f3f0;
+  /* Cor de fundo suave */
+  border-radius: 15px;
+  /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra para o efeito de elevação */
+  text-align: center;
+  /* Alinha o texto e a imagem no centro */
+  justify-content: center;
+  /* Espaçamento ao redor da caixa */
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  flex-direction: column;
+  align-items: stretch;
+  /* Ou outros valores dependendo do layout */
+  
+}
+
+table {
+  width: 100%;
+  padding-top: 12px;
+  font-size: 15px;
+  margin: auto;
+}
+
+table tbody tr:last-of-type th {
+  border-top: 1px solid black;
+  padding-top: 4px;
+}
+
+/* Estiliza a barra de rolagem */
+#cart-box::-webkit-scrollbar {
+  width: 8px;
+  /* Largura da barra de rolagem */
+}
+
+/* Estiliza o "fundo" da barra de rolagem */
+#cart-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Cor do trilho */
+  border-radius: 10px;
+  /* Deixa as bordas arredondadas */
+}
+
+/* Estiliza o "polegar", que é a parte móvel da barra de rolagem */
+#cart-box::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Cor da parte que se move */
+  border-radius: 10px;
+  /* Borda arredondada */
+  border: 2px solid #ccc;
+  /* Pode adicionar uma borda */
+}
+
+/* Estiliza o polegar ao passar o mouse sobre ele */
+#cart-box::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  /* Cor mais escura ao passar o mouse */
+}
+
+#cart-box h2 {
+  color: #b94e25;
+  /* Cor do texto do título */
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#cart-box img {
+  width: 100px;
+  /* Ajuste o tamanho da imagem */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+#cart-box p {
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  justify-content: space-between;
+  margin: 8px 0 8px 0;
+  text-align: left;
+  /* Alinhamento à esquerda */
+}
+
+.order1 {
+  text-align: left;
+  /* Alinhamento à esquerda */
+}
+
+.remove {
+  height: 15px;
+  width: 15px;
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 1.5px solid #bd8e7c;
+  padding: 2px;
+}
+
+.remove:hover {
+  height: 15px;
+  width: 15px;
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 1.5px solid black;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.remove:hover img {
+  filter: brightness(0);
+}
+
+.out-cart-box {
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo da div */
+  align-items: center; /* Centraliza verticalmente */
+  max-width: 30%;
+  min-width: 300px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.confirm-button {
+  display: flex;
+  justify-content: center; /* Centraliza o botão horizontalmente */
+  align-items: center; /* Centraliza o texto dentro do botão */
+  width: 200px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
+  background-color: #8B2C1A; /* Cor de fundo similar ao botão da imagem */
+  color: white; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  border: none; /* Remove a borda */
+  border-radius: 25px; /* Bordas arredondadas */
+  cursor: pointer; /* Mostra o cursor de mão ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+}
+
+.confirm-button:hover {
+  background-color: #6B2315; /* Cor mais escura ao passar o mouse */
+}
+
+.confirm-button:active {
+  background-color: #5A1D12; /* Cor ainda mais escura ao clicar */
+}

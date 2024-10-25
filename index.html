@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <title>Don Gulla</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div id="pai">
+
+    <div class="container">
+      <h1>Desserts</h1>
+
+      <div 
+        v-for="product in products" 
+        :key="product.name" 
+        class="product" 
+        @click="toggleProduct(product)"
+        :class="{selected : product.active}"
+        >
+        <img :src="product.photo" :alt="product.name" class="img_cards">
+        <div>
+          <button class="addToCard" v-if="product.quantity <= 0" @click="product.quantity++">
+            <i><img src="assets/images/icon-add-to-cart.svg" alt="Add to cart icon"></i>Add to Cart
+          </button>
+          <div class="quantity-area" v-if="product.quantity >= 1" >
+            <button class="minus-btn" @click.stop="product.quantity--" :disabled="product.quantity <= 0">-</button>
+            <span> {{product.quantity}} </span>
+            <button class="plus-btn" @click.stop="product.quantity++">+</button>
+          </div>
+        </div>
+        <div class="description">
+          <p class="tittle_1">{{ product.name }}</p>
+          <p class="tittle_2">{{ product.name2 }}</p>
+          <span class="price">${{ product.price.toFixed(2) }}</span>
+        </div> 
+      </div>
+    </div>
+
+    <div id="cart-box" v-if="total() <= 0">
+      <h2>Your Cart (0)</h2>
+      <img src="assets/images/illustration-empty-cart.svg" alt="Cake Image" class="cart-image">
+      <p>Your added items will appear here</p>
+    </div>
+
+    <div class="out-cart-box">
+
+      <div id="cart-box" v-if="total() > 0">
+        <h2>Your Cart ( {{ soma() }} )</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="product in products">
+              <th v-if="product.active & product.quantity > 0"> {{product.quantity + 'x ' + product.name}} </th>
+              <th v-if="product.active & product.quantity > 0"> {{'$ ' + product.quantity * product.price}} </th>
+            </tr>
+
+            <tr class="total">
+              <th>Total</th>
+              <th>{{'$ ' + total() }}</th>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <button class="confirm-button" v-if="total() > 0">Confirm Order</button>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
